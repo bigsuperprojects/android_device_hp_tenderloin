@@ -16,25 +16,16 @@
 #
 
 
-# Include tenderloin's BoardConfig.mk
-include device/hp/tenderloin/BoardConfig.mk
+# Include shooter's BoardConfig.mk
+include device/htc/shooter/BoardConfig.mk
 
 # Proprietary stuff.
-$(call inherit-product-if-exists, vendor/hp/tenderloin/tenderloin-vendor.mk)
+$(call inherit-product-if-exists, vendor/htc/shooter/shooter-vendor.mk)
 
-# common tenderloin configs
-$(call inherit-product, device/hp/tenderloin-common/tenderloin-common.mk)
+# common shooter configs
+$(call inherit-product, device/htc/shooter-common/shooter-common.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/hp/tenderloin/overlay
-
-# Custom init files.
-PRODUCT_COPY_FILES += \
-    device/hp/tenderloin/prebuilt/boot/moboot.splash.Evervolv.tga:moboot.splash.Evervolv.tga \
-    device/hp/tenderloin/prebuilt/boot/moboot.default:moboot.default
-
-
-PRODUCT_COPY_FILES += \
-    device/hp/tenderloin/makemulti.sh:makemulti.sh \
+DEVICE_PACKAGE_OVERLAYS += device/htc/shooter/overlay
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
@@ -56,5 +47,5 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
-$(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-hdpi-dalvik-heap.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)

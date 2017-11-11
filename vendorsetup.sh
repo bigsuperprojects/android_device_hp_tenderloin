@@ -1,0 +1,2 @@
+add_lunch_combo ev_shooter-eng
+add_lunch_combo ev_shooter-userdebug

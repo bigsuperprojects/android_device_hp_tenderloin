@@ -1,6 +1,35 @@
 #
-# system.prop for tenderloin
+# system.prop for shooter
 
+# board has 3D panel
+#persist.user.panel3D = 1
+
+rild.libpath=/system/lib/libhtc_ril.so
+# htc v4 ril
+ro.telephony.ril.v3=signalstrength,skipdatareg
+ro.ril.enable.garbage.filter=0
+ro.telephony.default_network = 4
+ro.com.google.clientidbase=android-sprint-us
+ro.com.google.locationfeatures=1
+ro.cdma.home.operator.numeric=310120
+ro.cdma.home.operator.alpha=Sprint
+gsm.sim.operator.alpha = sprint
+gsm.sim.operator.numeric = 310120
+gsm.sim.operator.iso-country = us
+gsm.operator.alpha = sprint
+gsm.operator.numeric = 310120
+gsm.operator.iso-country = us
+
+#
+# system props for the data modules
+#
+ro.use_data_netmgrd=true
+persist.data_netmgrd_nint=8
+persist.data_netmgrd_mtu=1472
+#
+
+#Modify MTU from 1500 to 1472 on 3G network
+ro.ril.set.mtu1472 = 1
 ro.additionalmounts=/mnt/usbdisk
 
 ro.cwm.forbid_format=/boot
@@ -19,9 +48,21 @@ fw.max_users = 5
 
 com.qc.hardware=true
 
+# density in DPI of the LCD of this board. This is used to scale the UI
+# appropriately. If this property is not defined, the default value is 160 dpi.
+ro.sf.lcd_density = 240
+
+# For auto backlight default value
+settings.display.autobacklight=1
+
+# For the default value of agps
+ro.ril.def.agps.mode = 2
+
 # The OpenGL ES API level that is natively supported by this device.
 # This is a 16.16 fixed point number
 ro.opengles.version = 131072
+
+mobiledata.interfaces=rmnet0,wlan0,gprs,ppp0,wimax0
 
 # For emmc phone storage
 ro.phone_storage = 1
@@ -34,4 +75,4 @@ net.bt.name=Android
 
 ro.input.noresample=1
 
-ro.radio.noril=1
+#ro.radio.noril=1

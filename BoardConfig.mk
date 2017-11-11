@@ -1,11 +1,11 @@
-# inherit from common tenderloin
--include device/hp/tenderloin-common/BoardConfigCommon.mk
+# inherit from common shooter
+-include device/htc/shooter-common/BoardConfigCommon.mk
 
 # Define Prebuilt kernel locations
-TARGET_PREBUILT_KERNEL := device/hp/tenderloin-common/prebuilt/boot/kernel
+# TARGET_PREBUILT_KERNEL := device/htc/shooter-common/prebuilt/boot/kernel
 
 ifdef RECOVERY_BUILD
-TARGET_KERNEL_CONFIG := tenderloin_recovery_defconfig
+TARGET_KERNEL_CONFIG := shooter_test_defconfig
 else
-TARGET_KERNEL_CONFIG := tenderloin_android_defconfig
+TARGET_KERNEL_CONFIG := shooter_test_defconfig
 endif
